@@ -1,2 +1,4 @@
 # cappacitadev
- Curso cappacita Dev Smarkio
+ Curso cappacita Dev Smarkio.
+ 
+ Exercícios em JS.
