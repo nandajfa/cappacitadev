@@ -1,4 +1,6 @@
 # cappacitadev
- Curso cappacita Dev Smarkio.
- 
- Exercícios em JS.
+ Cappacita Dev Smarkio.
+
+-Curso de construção de IA conversacional.
+
+-Exercícios em JS.
