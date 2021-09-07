@@ -1,22 +1,40 @@
-const sequence = {
-    _id: 1,
-    get id() {return this._id++}
+const { databaseConnection } = require('./connection')
+
+const pokemons = {}
+
+async function salvarPokemons(pokemon){
+
+    const queryInsertPokemon = `INSERT INTO pokemons(nome_pokemon, tipo) VALUES ('${pokemon.nome}', '${pokemon.tipo}')`
+
+    const result = await databaseConnection.raw(queryInsertPokemon)
+
+    if (result){
+        return {
+            nome: pokemon.nome,
+            tipo: pokemon.tipo,
+            id: result[0].insertId
+        }
+    } else
+        console.error("Deu erro!")
+        return {
+            error: "Deu erro na inserção"
+        }
 }
 
-const pokemons = []
+async function mostrarPokemon(id){
+    const querySelectPokemon = `SELECT * FROM pokemons WHERE id = ${id}`
 
-function salvarPokemons(pokemon){
-    if(!pokemon.id) pokemon.id = sequence.id
-    pokemons[pokemon.id] = pokemon
-    return pokemon
+    const result = await databaseConnection.raw(querySelectPokemon)
+
+    return result[0]
 }
 
-function mostrarPokemon(id){
-    return pokemons[id] || {}
-}
+async function mostrarpokemons(){
+    const querySelectPokemon = `SELECT * FROM pokemons`
 
-function mostrarpokemons(){
-    return Object.values(pokemons)
+    const result = await databaseConnection.raw(querySelectPokemon)
+
+    return result[0]
 }
 
 function atualizarPokemon(id, pokemon){
@@ -72,5 +90,5 @@ function batalhaPokemon(id1, id2){
 }
 
 
-module.export = {salvarPokemons, mostrarPokemon, mostrarpokemons, atualizarPokemon, deletarPokemon, batalhaPokemon}
+module.exports = {salvarPokemons, mostrarPokemon, mostrarpokemons, atualizarPokemon, deletarPokemon, batalhaPokemon}
 
