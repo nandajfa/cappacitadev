@@ -1,0 +1,14 @@
+h2{
+	background-color: rgb(56, 56, 150);
+	color: rgba(252, 252, 252, 0.5);
+}
+
+body{
+	background-color: rgba(117, 33, 196, 0.418);
+}
+
+div{
+	background-color: blue;
+	margin: inherit;
+	width: 50px;
+}
