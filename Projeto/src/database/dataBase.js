@@ -71,6 +71,14 @@ function batalhaPokemon(id1, id2){
     return '$(pokemon1.nome): $(pokemon1.hp) / $(pokemon2.hp): $(pokemon2.hp)'
 }
 
+function curarPokemon(id){
+    const pokemons = pokemons[id]
+    const pocao = 20
 
-module.exports = {salvarPokemons, mostrarPokemon, mostrarpokemons, atualizarPokemon, deletarPokemon, batalhaPokemon}
+    pokemon.hp = pokemon.hp + pocao;
+    if (pokemon.hp >=100) pokemon.hp = 100
+    return pokemon
+}
+
+module.exports = {salvarPokemons, mostrarPokemon, mostrarpokemons, atualizarPokemon, deletarPokemon, batalhaPokemon, curarPokemon}
 

@@ -1,0 +1,36 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+/*Valor padrão da div*/
+div{
+	float: left;
+	background-color: orange;
+}
+
+.div1{
+	background-color: aqua;
+}
+
+.div2{
+	background-color: rgb(146, 146, 62);
+}
+
+.div3{
+	background-color: violet;
+}
+
+.div4{
+background-color: wheat;
+}
+
+.div5{
+background-color: brown;
+}
+
+.div1, .div2, .div3, .div4, .div5{
+	display: inline-block;
+	width: 50px;
+	height: 50px
+}
