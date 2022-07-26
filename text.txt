@@ -1,0 +1,20 @@
+SELECT * FROM pokemon.pokemons;
+
+#INSERT INTO pokemons (nome_pokemon, tipo, local_origem) VALUES ('Pikachu', 'Elétrico', 'Primeira cidade')
+
+#UPDATE pokemons SET local_origem = 'Kanto' WHERE id = 1
+
+recrutamento.selecao@smarkio.com.br
+
+salvarPokemons
+
+  fraqueza: req.boby.fraqueza,
+        resistencia: req.body.resistencia,
+        hp: 100
+
+atualizarPokemon
+
+ fraqueza: req.boby.fraqueza,
+        resistencia: req.body.resistencia,
+        hp: 100,
+        id: parseInt(req.params.id)
